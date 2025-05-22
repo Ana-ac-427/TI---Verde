@@ -77,11 +77,13 @@
         }
          h3{
             border-left: 5px solid #2e7d32;
-            padding-left: 5px;
+            padding-left: 3px;
+            margin: 1px;
             color:#063d1e; 
             font-weight: normal;
-            font-size: 1.8em;
-            background-color: #2e7d3221;
+            font-size: 1.2em;
+            background-color: #2a692d2a;
+            font-family: 'Inter', sans-serif;
             
         }
         p.conteudo{
@@ -95,12 +97,33 @@
             margin-left: 10px;
         }
 
-        h4{
-            color: #2e7d32;
+        h1.ref{
+            color: #817676c2;
+            font-size: small;
+            /*color: #2e7d32;
             text-align: center;
             padding: 10px;
             padding-left: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 10px;*/
+        }
+        p.ref{
+            color: #817676c2;
+            font-weight:normal;
+            font-size: small;
+        }
+        a.ref{
+            color: #817676c2;
+            font-weight:normal;
+            font-size: small;
+            text-decoration: none;
+        }
+        a.ref:hover{
+            color: #0a440d;
+            text-decoration: underline;
+        }
+        p.ref:hover{
+            color: #0a440d;
+            text-decoration: underline;
         }
         strong{
             color: #0a440d;
@@ -125,6 +148,32 @@
         p.fonte{
             color: #5a52528f;
         }
+        ol>li{
+            padding: 5px;
+            margin-left: 30px;
+
+        }    
+
+        a.git{
+            text-decoration: none;
+            color: black;
+        } 
+        a.especial{
+            color: #0a440d;
+            text-decoration: none;
+            font-weight: bold;
+        }  
+        a.sobre{
+            color: #063d1e;
+            text-decoration: none;
+        }
+        a.sobre:hover{
+            text-decoration: underline;
+            color: blue;
+        }
+            
+            
+        
 
          @media (max-width: 600px) {
         header h1 {
