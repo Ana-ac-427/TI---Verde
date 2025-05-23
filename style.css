@@ -163,13 +163,29 @@
             text-decoration: none;
             font-weight: bold;
         }  
+        a.especial:hover{
+            text-decoration: underline;
+            background-color: #78d37d;
+        }
         a.sobre{
             color: #063d1e;
             text-decoration: none;
+            transition: all 0.3s ease; 
         }
         a.sobre:hover{
             text-decoration: underline;
             color: blue;
+        }
+        .icone-voltar i {
+            color: rgb(9, 80, 9);
+            font-size: 30px;
+            transition: all 0.3s ease; 
+            padding-left: 30px;
+        }
+        .icone-voltar i:hover {
+        color: rgb(40, 173, 51);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transform: scale(1.1);
         }
             
             
