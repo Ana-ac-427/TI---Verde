@@ -62,6 +62,17 @@
       display: flex;
       align-items: center;
     }
+    .icone-voltar i {
+            color: rgb(9, 80, 9);
+            font-size: 30px;
+            transition: all 0.3s ease; 
+            margin-left: 30px;
+    }
+    .icone-voltar i:hover {
+        color: rgb(40, 173, 51);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transform: scale(1.1);
+        }
 
     @media(max-width: 768px) {
       .card {
@@ -72,112 +83,115 @@
 </head>
 <body>
 
-<header>
-  🌿 Dashboard - Sustentabilidade em TI 🌿
-</header>
-
-<div class="container">
-  <div class="card">
-    <div class="title"><i class="fas fa-leaf icon" style="color:#98BF5E;"></i>Conhecimento sobre TI Verde</div>
-    <canvas id="chartConhecimento"></canvas>
+<main>
+  <header>
+    🌿 Dashboard - Sustentabilidade em TI 🌿
+  </header>
+  
+  <div class="container">
+    <div class="card">
+      <div class="title"><i class="fas fa-leaf icon" style="color:#98BF5E;"></i>Conhecimento sobre TI Verde</div>
+      <canvas id="chartConhecimento"></canvas>
+    </div>
+  
+    <div class="card">
+      <div class="title"><i class="fas fa-recycle icon"></i>Práticas Ambientais</div>
+      <canvas id="chartPraticas"></canvas>
+    </div>
+  
+    <div class="card">
+      <div class="title"><i class="fas fa-trash icon" style="color:#8DA68A;"></i>Descarte de Lixo</div>
+      <canvas id="chartLixo"></canvas>
+    </div>
+  
+    <div class="card">
+      <div class="title"><i class="fas fa-home icon" style="color:#90BF2A;"></i>TI Verde em Casa/Empresa</div>
+      <canvas id="chartCasa"></canvas>
+    </div>
+  
+    <div class="card">
+      <div class="title"><i class="fas fa-lightbulb icon" style="color:rgb(235, 235, 12);"></i>Conceitos Conhecidos</div>
+      <canvas id="chartConceitos"></canvas>
+    </div>
   </div>
-
-  <div class="card">
-    <div class="title"><i class="fas fa-recycle icon"></i>Práticas Ambientais</div>
-    <canvas id="chartPraticas"></canvas>
-  </div>
-
-  <div class="card">
-    <div class="title"><i class="fas fa-trash icon" style="color:#8DA68A;"></i>Descarte de Lixo</div>
-    <canvas id="chartLixo"></canvas>
-  </div>
-
-  <div class="card">
-    <div class="title"><i class="fas fa-home icon" style="color:#90BF2A;"></i>TI Verde em Casa/Empresa</div>
-    <canvas id="chartCasa"></canvas>
-  </div>
-
-  <div class="card">
-    <div class="title"><i class="fas fa-lightbulb icon" style="color:rgb(235, 235, 12);"></i>Conceitos Conhecidos</div>
-    <canvas id="chartConceitos"></canvas>
-  </div>
-</div>
-
-<script>
-  new Chart(document.getElementById('chartConhecimento'), {
-    type: 'doughnut',
-    data: {
-      labels: ['Sim'],
-      datasets: [{
-        data: [100],
-        backgroundColor:['#66bb6a']
-      }]
-    }
-  });
-
-  new Chart(document.getElementById('chartPraticas'), {
-    type: 'pie',
-    data: {
-      labels: ['Sim', 'Não'],
-      datasets: [{
-        data: [50, 50],
-        backgroundColor: ['#81c784', '#c8e6c9']
-      }]
-    }
-  });
-
-  new Chart(document.getElementById('chartLixo'), {
-    type: 'bar',
-    data: {
-      labels: ['Sim', 'Não', 'Mais ou menos'],
-      datasets: [{
-        label: 'Respostas',
-        data: [44.4, 22.2, 33.3],
-        backgroundColor: ['#66bb6a', '#a5d6a7', '#c8e6c9']
-      }]
-    },
-    options: {
-      scales: {
-        y: { beginAtZero: true }
+  
+  <script>
+    new Chart(document.getElementById('chartConhecimento'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Sim'],
+        datasets: [{
+          data: [100],
+          backgroundColor:['#66bb6a']
+        }]
       }
-    }
-  });
-
-  new Chart(document.getElementById('chartCasa'), {
-    type: 'bar',
-    data: {
-      labels: ['Sim', 'Não', 'Não sei dizer'],
-      datasets: [{
-        label: 'Respostas',
-        data: [25, 55.6, 19.4],
-        backgroundColor: ['#81c784', '#c8e6c9', '#a5d6a7']
-      }]
-    },
-    options: {
-      scales: {
-        y: { beginAtZero: true }
+    });
+  
+    new Chart(document.getElementById('chartPraticas'), {
+      type: 'pie',
+      data: {
+        labels: ['Sim', 'Não'],
+        datasets: [{
+          data: [50, 50],
+          backgroundColor: ['#81c784', '#c8e6c9']
+        }]
       }
-    }
-  });
-
-  new Chart(document.getElementById('chartConceitos'), {
-    type: 'bar',
-    data: {
-      labels: ['Eficiência energética', 'Cloud computing sustentável', 'Data centers verdes', 'Descarte correto de e-lixo', 'Nunca ouvi falar'],
-      datasets: [{
-        label: 'Conhecimento (%)',
-        data: [36.1, 11.1, 16.7, 55.6, 36.1],
-        backgroundColor: ['#66bb6a', '#a5d6a7', '#c8e6c9', '#388e3c', '#81c784']
-      }]
-    },
-    options: {
-      indexAxis: 'y',
-      scales: {
-        x: { beginAtZero: true }
+    });
+  
+    new Chart(document.getElementById('chartLixo'), {
+      type: 'bar',
+      data: {
+        labels: ['Sim', 'Não', 'Mais ou menos'],
+        datasets: [{
+          label: 'Respostas',
+          data: [44.4, 22.2, 33.3],
+          backgroundColor: ['#66bb6a', '#a5d6a7', '#c8e6c9']
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
       }
-    }
-  });
-</script>
-
-</body>
+    });
+  
+    new Chart(document.getElementById('chartCasa'), {
+      type: 'bar',
+      data: {
+        labels: ['Sim', 'Não', 'Não sei dizer'],
+        datasets: [{
+          label: 'Respostas',
+          data: [25, 55.6, 19.4],
+          backgroundColor: ['#81c784', '#c8e6c9', '#a5d6a7']
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  
+    new Chart(document.getElementById('chartConceitos'), {
+      type: 'bar',
+      data: {
+        labels: ['Eficiência energética', 'Cloud computing sustentável', 'Data centers verdes', 'Descarte correto de e-lixo', 'Nunca ouvi falar'],
+        datasets: [{
+          label: 'Conhecimento (%)',
+          data: [36.1, 11.1, 16.7, 55.6, 36.1],
+          backgroundColor: ['#66bb6a', '#a5d6a7', '#c8e6c9', '#388e3c', '#81c784']
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        scales: {
+          x: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+  
+  <a href="index.html" class="icone-voltar"> <i class="fa-solid fa-circle-arrow-left"></i></a>
+  </body>
+</main>
 </html>
