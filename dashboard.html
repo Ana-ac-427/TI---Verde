@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard TI Verde</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #e8f5e9;
+      color: #505255;
+    }
+
+    header {
+      background:#388e3c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 350px;
+      flex: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover{
+         transform: translateY(-10px);
+         box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+
+    }
+
+    canvas {
+      max-width: 100%;
+    }
+
+    .icon {
+      font-size: 1.5em;
+      color: #66bb6a;
+      margin-right: 10px;
+    }
+
+    .title {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    @media(max-width: 768px) {
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  🌿 Dashboard - Sustentabilidade em TI 🌿
+</header>
+
+<div class="container">
+  <div class="card">
+    <div class="title"><i class="fas fa-leaf icon" style="color:#98BF5E;"></i>Conhecimento sobre TI Verde</div>
+    <canvas id="chartConhecimento"></canvas>
+  </div>
+
+  <div class="card">
+    <div class="title"><i class="fas fa-recycle icon"></i>Práticas Ambientais</div>
+    <canvas id="chartPraticas"></canvas>
+  </div>
+
+  <div class="card">
+    <div class="title"><i class="fas fa-trash icon" style="color:#8DA68A;"></i>Descarte de Lixo</div>
+    <canvas id="chartLixo"></canvas>
+  </div>
+
+  <div class="card">
+    <div class="title"><i class="fas fa-home icon" style="color:#90BF2A;"></i>TI Verde em Casa/Empresa</div>
+    <canvas id="chartCasa"></canvas>
+  </div>
+
+  <div class="card">
+    <div class="title"><i class="fas fa-lightbulb icon" style="color:rgb(235, 235, 12);"></i>Conceitos Conhecidos</div>
+    <canvas id="chartConceitos"></canvas>
+  </div>
+</div>
+
+<script>
+  new Chart(document.getElementById('chartConhecimento'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Sim'],
+      datasets: [{
+        data: [100],
+        backgroundColor:['#66bb6a']
+      }]
+    }
+  });
+
+  new Chart(document.getElementById('chartPraticas'), {
+    type: 'pie',
+    data: {
+      labels: ['Sim', 'Não'],
+      datasets: [{
+        data: [50, 50],
+        backgroundColor: ['#81c784', '#c8e6c9']
+      }]
+    }
+  });
+
+  new Chart(document.getElementById('chartLixo'), {
+    type: 'bar',
+    data: {
+      labels: ['Sim', 'Não', 'Mais ou menos'],
+      datasets: [{
+        label: 'Respostas',
+        data: [44.4, 22.2, 33.3],
+        backgroundColor: ['#66bb6a', '#a5d6a7', '#c8e6c9']
+      }]
+    },
+    options: {
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+
+  new Chart(document.getElementById('chartCasa'), {
+    type: 'bar',
+    data: {
+      labels: ['Sim', 'Não', 'Não sei dizer'],
+      datasets: [{
+        label: 'Respostas',
+        data: [25, 55.6, 19.4],
+        backgroundColor: ['#81c784', '#c8e6c9', '#a5d6a7']
+      }]
+    },
+    options: {
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+
+  new Chart(document.getElementById('chartConceitos'), {
+    type: 'bar',
+    data: {
+      labels: ['Eficiência energética', 'Cloud computing sustentável', 'Data centers verdes', 'Descarte correto de e-lixo', 'Nunca ouvi falar'],
+      datasets: [{
+        label: 'Conhecimento (%)',
+        data: [36.1, 11.1, 16.7, 55.6, 36.1],
+        backgroundColor: ['#66bb6a', '#a5d6a7', '#c8e6c9', '#388e3c', '#81c784']
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      scales: {
+        x: { beginAtZero: true }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
